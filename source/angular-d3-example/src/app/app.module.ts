@@ -10,7 +10,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { D3Provider } from '../providers/d3/d3';
+import { InicioPage } from '../pages/inicio/inicio';
+import { ComponentsModule } from '../components/components.module';
+import { VideoPlayer } from '@ionic-native/video-player';
+import { HttpClient } from '@angular/common/http';
+import { GrafoGeralProvider } from '../providers/grafo-geral/grafo-geral';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,14 @@ import { D3Provider } from '../providers/d3/d3';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    InicioPage,
+ 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ComponentsModule  
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,13 +37,15 @@ import { D3Provider } from '../providers/d3/d3';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    InicioPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    D3Provider,
-  ]
+    VideoPlayer,
+    GrafoGeralProvider,
+     ]
 })
 export class AppModule {}
