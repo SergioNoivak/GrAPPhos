@@ -1,0 +1,125 @@
+<!-- Generated template for the LerIntroducao_1Component component -->
+<div>
+
+
+
+    <ion-card>
+
+   
+        <ion-card-content text-justify>
+            A teoria dos grafos é um ramo da matemática que estuda as relações entre os objetos de um determinado conjunto.
+            Para tal são empregadas estruturas chamadas de grafos<ng-katex equation="G=(V,E)"></ng-katex>
+            onde <ng-katex equation="V"></ng-katex>  é um conjunto não vazio de objetos denominados vértices (ou nós) e <ng-katex equation="E"></ng-katex>  (do inglês Edges - arestas) 
+            é um subconjunto de pares não ordenados de <ng-katex equation="V"></ng-katex>.
+            Dependendo da aplicação, arestas podem ou não ter direção, 
+            pode ser permitido ou não arestas ligarem um vértice a ele 
+            próprio e vértices e/ou arestas podem ter um peso (numérico) associado.
+             Se as arestas têm uma direção associada (indicada por uma seta
+              na representação gráfica) temos um dígrafo (grafo orientado). 
+            Um grafo com um único vértice e sem arestas é conhecido como grafo trivial.
+            Estruturas que podem ser representadas por grafos estão em toda parte e muitos problemas
+             de interesse prático podem ser formulados como questões sobre certos grafos.       
+              </ion-card-content>
+      
+
+            </ion-card>
+
+            <ion-card justify-content-center>  
+                  <img style="width: 165px; height: 109px;" class="center" src="../../assets/imgs/teoria/introducao-a-teoria-de-grafos/GrafoSeisVerticesSeisArestas.png"alt="">
+                <ion-card-content>
+                      <b>Um grafo simples com seis vértices e sete arestas</b>                 
+                  <p>
+                  
+                      <ng-katex equation="G=(V,E)"></ng-katex><br>
+                      <ng-katex equation= 'V='></ng-katex>
+                      <ng-katex equation="\\{ 1,2,3,4,5,6\\}"></ng-katex> <br>
+                      <ng-katex equation= 'E='></ng-katex>
+                      <ng-katex equation= '\\{12, 15, 23, 25, 34, 45, 46\\}'></ng-katex><br>
+
+                       
+                  </p>
+                </ion-card-content>
+              </ion-card>
+            
+         
+
+
+                <ion-card text-justify>  
+                       <ion-card-content>
+                         Uma aresta é uma ligação entre dois vertices.
+                         Escrevemos uma aresta como sendo um par <ng-katex equation= 'uv'></ng-katex>, 
+                         onde <ng-katex equation= 'u'></ng-katex> e <ng-katex equation= 'v'></ng-katex> são dois vértices,ou seja
+                         <ng-katex equation= 'u,v \\in E(G)'></ng-katex>. Como existe uma aresta entre esses dois vértices, dizemos que eles são vizinhos.
+                         
+                         
+                         <img style="width: 165px; height: 109px;" class="center" src="../../assets/imgs/teoria/introducao-a-teoria-de-grafos/verticesVizinhos.PNG"alt="">
+                         
+                         <b>
+                          Vértices vizinhos
+                        </b>                   
+                    <p>
+                    
+                        <ng-katex equation="G=(V,E)"></ng-katex><br>
+                        <ng-katex equation= 'V='></ng-katex>
+                        <ng-katex equation="\\{ u,v,x,y\\}"></ng-katex> <br>
+                        <ng-katex equation= 'E='></ng-katex>
+                        <ng-katex equation= '\\{uv,vy,xv\\}'></ng-katex><br>
+  
+                    </p>
+                  </ion-card-content>
+                </ion-card>
+
+
+
+                <ion-card text-justify>  
+                    <ion-card-content>
+                        Se <ng-katex equation= 'u,v \\in E'></ng-katex> e na aresta <ng-katex equation= 'e = uv'></ng-katex>, dizemos que <ng-katex equation= 'u'></ng-katex> e <ng-katex equation= 'v'></ng-katex> incidentes a <ng-katex equation= 'e'></ng-katex>.<br>
+                         Duas arestas <ng-katex equation= 'e \\neq f'></ng-katex> são adjacentes se elas têm um extremo em
+                        comum. Um laço (ou loop) é uma aresta cujas pontas nais são iguais.
+                        Arestas paralelas ou multiplas arestas são arestas que tem o
+                        mesmo par de pontas nais.Um grafo simples é um grafo que não contém laços ou arestas
+                        múltiplas.Denote por <ng-katex equation= 'n'></ng-katex> o número de vértices e por <ng-katex equation= 'm'></ng-katex> o número de arestas
+                        de um grafo <ng-katex equation= 'G'></ng-katex>.
+                 
+                        <img  style="filter: grayscale(100%);" src="../../assets/imgs/teoria/classes-comuns-de-grafos/bipartido.png" alt="">
+
+
+                    </ion-card-content>
+                  </ion-card>
+
+
+
+                  <ion-card text-justify>  
+                      <ion-card-content>
+  
+                  <h2><b>Grau de um vértice <ng-katex equation= 'd(v)'></ng-katex></b></h2>
+                  O grau <ng-katex equation= 'd(v)'></ng-katex> de um vértice <ng-katex equation= 'v'></ng-katex>de um grafo<ng-katex equation= 'G'></ng-katex> é o número de arestas
+                  incidentes a ele, exceto no laço de um vértice, pois o laço
+                  contribui duas vezes ao grau daquele vértice.
+
+                  <img style="width: 165px; height: 109px;" class="center" src="../../assets/imgs/teoria/introducao-a-teoria-de-grafos/grau.png"alt="">
+                  <ng-katex equation="G=(V,E)"></ng-katex><br>
+                  <ng-katex equation= 'V='></ng-katex>
+                  <ng-katex equation="\\{ J,K,L,M,N,O,P\\}"></ng-katex> <br>
+                  <ng-katex equation= 'E= \\{LO,LJ,LK,KN,NJ,JP,JM,MP\\}'></ng-katex><br>
+                  Possui graus: <br>
+                  <ng-katex equation= 'd(J)=4'></ng-katex><br> 
+                  <ng-katex equation= 'd(K)=3'></ng-katex><br> 
+                  <ng-katex equation= 'd(L)=3'></ng-katex><br> 
+                  <ng-katex equation= 'd(M)=2'></ng-katex><br> 
+                  <ng-katex equation= 'd(N)=2'></ng-katex><br> 
+                  <ng-katex equation= 'd(O)=1'></ng-katex><br> 
+                  <ng-katex equation= 'd(P)=2'></ng-katex><br> 
+                </ion-card-content>
+              </ion-card>
+
+
+
+                  
+                        
+        
+                 
+
+
+
+</div>

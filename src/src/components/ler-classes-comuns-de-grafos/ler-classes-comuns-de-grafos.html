@@ -1,0 +1,99 @@
+<!-- Generated template for the LerClassesComunsDeGrafosComponent component -->
+<div>
+
+
+  <ion-card>
+    <ion-card-content text-justify>
+      Alguns tipos de grafos se destacam por propriedades particulares que serão aqui abordadas.    
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+      <ion-card-content text-justify>    
+      <h2>Grafo Direcionado</h2>
+      Grafo direcionado,orientado,dirigido ou dígrafo <ng-katex equation= "G"></ng-katex> Um grafo é dito direcionado onde o sentido das ligações
+      entre os vértices é importante. Nesse
+      caso, as arestas possuem um sentido
+      marcado por uma seta.
+  <img  style="filter: grayscale(100%);" src="../../assets/imgs/teoria/classes-comuns-de-grafos/direcionado.PNG" alt="">
+</ion-card-content>
+</ion-card>
+  <ion-card>
+      <ion-card-content text-justify>
+        <h2><b>Grafo Completo</b></h2>
+        em que todo vértice é adjacente a todos os outros vértices. 
+        O grafo completo de <ng-katex equation="n"></ng-katex> vértices é frequentemente denotado por   <ng-katex equation="K_n"></ng-katex>
+      
+        <ion-slides pager>
+          <ion-slide style="padding:50px;    filter: grayscale(100%);
+          " *ngFor="let dado of dadosSlidesCompleto">
+              <img style="width:210px;height:184px;" [src]="dado.url" alt="">
+              <ng-katex [equation]= "dado.equation"></ng-katex>
+            </ion-slide>
+          </ion-slides>
+      </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+          <ion-card-content text-justify>
+            <h2><b>Grafo Regular</b></h2>
+            O grafo regular é um grafo onde cada vértice tem o mesmo número de adjacências,ou seja
+             Um grafo   <ng-katex equation= "G"></ng-katex>
+             é <ng-katex equation= "k-regular "></ng-katex>se <ng-katex equation= "d(v) = k, \\forall v \\in V(G)"></ng-katex>. 
+              <ion-slides pager>
+              <ion-slide style="padding:50px;    filter: grayscale(100%);
+              " *ngFor="let dado of dadosRegular">
+                  <img style="width:210px;height:184px;" [src]="dado.url" alt="">
+                  <ng-katex [equation]= "dado.equation"></ng-katex>
+                </ion-slide>
+              </ion-slides>
+          </ion-card-content>
+          </ion-card>
+
+
+          <ion-card>
+              <ion-card-content text-justify>
+                <h2><b>Grafo Bipartido</b></h2>
+                Um grafo simples <ng-katex equation= "G"></ng-katex> é bipartido se seus vértices podem ser
+                particionados em dois subconjuntos <ng-katex equation= "U"></ng-katex> e <ng-katex equation= "V"></ng-katex> tal que toda aresta
+                tem um extremo em <ng-katex equation= "U"></ng-katex> e outro em <ng-katex equation= "V"></ng-katex> ;
+                <img  style="filter: grayscale(100%);         width: 50%;
+                " src="../../assets/imgs/teoria/classes-comuns-de-grafos/bipartido.png" alt="">
+                  
+                Para o Grafo <ng-katex equation= "G=(U \\cup V,E)"></ng-katex> temos os conjuntos <ng-katex equation= "U"></ng-katex> e <ng-katex equation= "V"></ng-katex>
+                de forma que eles são disjuntos e existe uma relação de bijeção entre os dois conjuntos, onde tais que toda aresta conecta um vértice em <ng-katex equation= "U"></ng-katex> a um vértice em <ng-katex equation= "V"></ng-katex>.
+          
+                 
+              </ion-card-content>
+              </ion-card>
+
+              <ion-card>
+                  <ion-card-content text-justify>
+                    <h2><b>Grafo Caminho</b></h2>
+                    Grafo Caminho com <ng-katex equation= "n"></ng-katex> vértices é um grafo simples denotado por <ng-katex equation= "P_n"></ng-katex> cujos
+                    vértices podem ser arranjados em uma sequência linear de tal
+                    forma que dois vértices são adjacentes se eles são consecutivos
+                    na sequência e não são adjacentes caso contrário.
+                    <img  style="filter: grayscale(100%);" src="../../assets/imgs/teoria/classes-comuns-de-grafos/caminho.png" alt="">
+                    O grafo caminho está visível com risco mais acentuado na imagem.
+                  
+                  </ion-card-content>
+                  </ion-card>
+
+
+
+                  <ion-card>
+                      <ion-card-content text-justify>    
+                      <h2>Grafo Ciclo</h2>
+                      Grafo Ciclo <ng-katex equation= "C_n"></ng-katex> de  <ng-katex equation= "n"></ng-katex>  vértices os quais podem ser arranjados em uma sequência cíclica de tal
+                  forma que dois vértices são adjacentes se eles são consecutivos
+                  na sequência e não são adjacentes caso contrário.
+                  <img  style="filter: grayscale(100%);" src="../../assets/imgs/teoria/classes-comuns-de-grafos/ciclo.png" alt="">
+                </ion-card-content>
+              </ion-card>
+              
+
+
+
+</div>

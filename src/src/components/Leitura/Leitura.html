@@ -1,0 +1,56 @@
+<!-- Generated template for the LerIntroducaoComponent component -->
+<div>
+
+
+
+
+
+<div [ngSwitch]="nomeDeLicao">
+    <p *ngSwitchCase="'Introdução a Teoria dos Grafos'">
+        <ler-introducao-1 [nomeDeLicao]="nomeDeLicao"></ler-introducao-1>
+    </p>
+
+
+    <p *ngSwitchCase="'Algoritmos Em Grafos'">
+        
+        <ler-algoritmos-em-grafos [nomeDeLicao]="nomeDeLicao"></ler-algoritmos-em-grafos>
+        </p>
+
+
+    <p *ngSwitchCase="'Motivação'">
+        
+            <ler-motivacao [nomeDeLicao]="nomeDeLicao"></ler-motivacao>
+            </p>
+        
+            
+            <p *ngSwitchCase="'Classes comuns de grafos'">
+                    
+                    <ler-classes-comuns-de-grafos [nomeDeLicao]="nomeDeLicao"></ler-classes-comuns-de-grafos>
+            </p>
+
+
+
+            <p *ngSwitchCase="'Propriedades do Grafo Completo'">
+                    
+                    <ler-propriedades-do-grafo-completo [nomeDeLicao]="nomeDeLicao"></ler-propriedades-do-grafo-completo>
+            </p>
+
+            
+            <p *ngSwitchCase="'Isomorfismo'">
+                    
+                    <ler-isomorfismo [nomeDeLicao]="nomeDeLicao"></ler-isomorfismo>
+            </p>
+
+
+
+</div>             
+
+
+
+
+
+
+
+
+
+  </div>

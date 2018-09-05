@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { VideoPlayer } from '@ionic-native/video-player';
 
 /**
  * Generated class for the MeuComponenteVideoComponent component.
@@ -15,13 +14,8 @@ export class MeuComponenteVideoComponent {
 
   text: string;
 
-  constructor(private videoPlayer: VideoPlayer) {
-    this.videoPlayer.play('./../../assets/videos/Graph.mp4').then(() => {
-      console.log('video completed');
-     }).catch(err => {
-      console.log(err);
-     });
-     this.text="texto";
+  constructor() {
+    
   }
 
 }
