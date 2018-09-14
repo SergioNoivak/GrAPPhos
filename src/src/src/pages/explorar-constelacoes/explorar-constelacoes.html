@@ -1,0 +1,76 @@
+<!--
+  Generated template for the ExplorarConstelacoesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content >
+
+  <div id="acima" style="color:white">
+
+      <button (click)="clicouGerar()" outline ion-button small start color="primary">
+          <img src="../../assets/icon/networking.png" alt="">
+          
+      </button>      
+      <button (click)="clicouDimensionar()" outline ion-button small start color="primary">
+          <img src="../../assets/icon/move-option.png" alt="">
+          
+      </button>
+
+      <button  outline ion-button small start color="danger">
+         Deletar 
+      </button>
+  </div>
+
+
+  <div #canvas on-tap="funcao()"  id="cyExplorar">
+    
+  </div>
+
+
+
+  <ion-scroll scrollX="true" direction="x">
+  <ion-card style="        background-color: rgba(255, 255, 255, 0.089); color:white;
+  ">
+
+      <ion-card-header style="color:white;">
+      </ion-card-header>
+
+      <ion-card-content >
+
+          <ng-katex equation="G=(V,E)"></ng-katex><br>
+          <ng-katex equation= 'V='></ng-katex>
+            <ng-katex [equation]="vertices" [options]="options"></ng-katex> <br>
+
+          <ng-katex equation= 'E='></ng-katex>
+          <ng-katex [equation]="arestas" ></ng-katex><br>
+
+
+        </ion-card-content>
+    
+    </ion-card>
+
+  </ion-scroll>
+
+    <div class="textoConteudo" (click)="funcao()">
+
+        <ion-card>
+            <ion-card-header>
+              Header
+            </ion-card-header>
+            <ion-card-content>
+              The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+            </ion-card-content>
+          </ion-card>
+
+    </div>
+
+    
+  </ion-content>    
+
+
+
+    
+    

@@ -1,0 +1,18 @@
+<ion-content padding>
+  <h1 text-center>Lição sobre {{ lesson }}</h1>
+
+
+    
+  <Leitura [nomeDeLicao]="lesson"></Leitura>
+
+  
+  <button ion-button (click)='popPage()'>Voltar</button>
+  <button ion-button color="secondary" outline >
+      <img src="../../assets/icon/checked.png" alt="">
+
+    Entendi!</button>
+  <button ion-button color="dark" outline>
+    <img src="../../assets/icon/star.png" alt="">
+    Favoritar</button>
+
+</ion-content>

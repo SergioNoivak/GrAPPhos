@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'funkymuskrat';
+	src: url('./funkymuskrat.eot');
+	src: local('funkymuskrat'), url('./funkymuskrat.woff') format('woff'), url('./funkymuskrat.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_218">Text with this font applied</p> */
+.fontsforweb_fontid_218 {
+	font-family: 'funkymuskrat' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
