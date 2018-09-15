@@ -41,7 +41,7 @@ export class ExplorarConstelacoesPage {
   configuradorDeAreaDeDesenho: ConfiguradorDeAreaDeDesenho;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.configuradorDeAreaDeDesenho = new ConfiguradorDeAreaDeDesenho();
+      this.configuradorDeAreaDeDesenho = new ConfiguradorDeAreaDeDesenho();
   }
 
   ionViewDidLoad() {
@@ -77,5 +77,10 @@ export class ExplorarConstelacoesPage {
     this.configuradorDeAreaDeDesenho.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface, this.configuracoesDeCriacao, "explorar-constelacoes-1");
     this.atualizarEquacaoLatex();
     this.configuracoesDeCriacao.contagem=0;
+  }
+
+
+  startNextPage(){
+    this.navCtrl.push('ExplorarConstelacoes_2Page',{grafo: this.grafoInterface.json()});
   }
 }

@@ -1,0 +1,89 @@
+
+
+
+<ion-content padding>
+    <div id="acima" style="color:white">
+
+        <button (click)="clicouGerar()" outline ion-button small start color="primary">
+          <img src="../../assets/icon/networking.png" alt="">
+    
+        </button>
+        <button (click)="clicouDimensionar()" outline ion-button small start color="primary">
+          <img src="../../assets/icon/move-option.png" alt="">
+    
+        </button>
+    
+        <button (click)="clicouLimpar()"  outline ion-button small start color="danger">
+        
+        
+          Limpar    
+    
+    </button>
+      </div>
+    
+    
+      <div (tap)="atualizarEquacaoLatex()" (press)="atualizarEquacaoLatex()" id="cyExplorar2">
+    
+      </div>
+      <ion-scroll scrollX="true" direction="x">
+        <ion-card id="cartaoLatex">
+    
+          <ion-card-header style="color:white;">
+          </ion-card-header>
+    
+          <ion-card-content>
+    
+            <ng-katex equation="G=(V,E)"></ng-katex>
+            <br>
+            <ng-katex equation='V='></ng-katex>
+            <ng-katex [equation]="vertices" [options]="options"></ng-katex>
+            <br>
+    
+            <ng-katex equation='E='></ng-katex>
+            <ng-katex [equation]="arestas"></ng-katex>
+            <br>
+    
+    
+          </ion-card-content>
+    
+        </ion-card>
+    
+      </ion-scroll>
+    
+    
+      <div class="textoTeoria" >
+    
+    
+    
+        
+          
+          <ion-card id="cartaoTeoria">
+            <ion-card-header>
+              Header
+            </ion-card-header>
+            <ion-card-content>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+            </ion-card-content>
+          </ion-card>
+          
+          
+          <button float-right (click)="startNextPage()"	 ion-button color="secondary" >Próximo</button>
+    
+        
+          
+    
+    
+    
+    
+    
+    
+        
+    
+    
+    
+    
+      </div>
+       </ion-content>

@@ -1,7 +1,4 @@
-page-explorar-constelacoes {
-
-
-
+page-explorar-constelacoes-2 {
 
 
 
@@ -15,11 +12,7 @@ page-explorar-constelacoes {
         white-space: nowrap;
     }
 
-    ion-card {
-        width: 100000000% !important;
-        display: inline-block;
-    }
-
+ 
     ion-scroll {
         min-height: 160px; 
         height: auto;
@@ -36,12 +29,11 @@ page-explorar-constelacoes {
 
 
     }
-    #cyExplorar {
+    #cyExplorar2 {
         position: relative;
         left: 0;
         top: 0;
         right: 0;
-
         z-index: 0;
         height: 60%;
         width: 100%;
@@ -54,7 +46,8 @@ page-explorar-constelacoes {
 
         background-color: rgba(255, 255, 255, 0.089); color:white;
         height: 10%;
-
+        width: 100000000% !important;
+        display: inline-block;
 
       }
 
@@ -77,16 +70,17 @@ page-explorar-constelacoes {
       .textoTeoria{
         margin-top: 10%;
 
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.24);
 
 
-
+        width: 100%;
 
 
 
 
       }
 
-
-
+      #cartaoTeoria{
+        background-color: rgba(255, 255, 255, 0.657);
+      }
 }

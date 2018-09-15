@@ -1,0 +1,98 @@
+page-explorar-constelacoes {
+
+
+
+
+
+
+    ion-content{
+
+
+        background-image:url( './../../assets/imgs/blue_universe.jpg');
+
+    }
+    .scroll-zoom-wrapper {
+        white-space: nowrap;
+    }
+
+ 
+    ion-scroll {
+        min-height: 160px; 
+        height: auto;
+
+            .scroll-content {
+            padding: 0px !important;
+        }    
+    }
+    #acima{
+
+        position: relative;
+        height: 8%;
+
+
+
+    }
+    #cyExplorar {
+        position: relative;
+        left: 0;
+        top: 0;
+        right: 0;
+
+        z-index: 0;
+        height: 60%;
+        width: 100%;
+  
+
+      }
+
+
+      #cartaoLatex{
+
+        background-color: rgba(255, 255, 255, 0.089); color:white;
+        height: 10%;
+        width: 100000000% !important;
+        display: inline-block;
+
+      }
+
+      #abaixo{
+
+        position: relative;
+
+        border-style: solid;
+        border-width: 5px;
+        color: white;
+        border-color: white;
+        background-color: rgba(255, 255, 255, 0.089);
+        height: 20%;
+        width: 100%;
+        z-index: 3;
+        margin-bottom: 16px;
+        z-index: 2;
+
+      }
+      .textoTeoria{
+        margin-top: 10%;
+
+        background-color: rgba(255, 255, 255, 0.24);
+
+
+        width: 100%;
+
+
+
+
+      }
+
+
+        #cartaoLatex{
+
+        background-color: rgba(255, 255, 255, 0.089); color:white;
+        height: 10%;
+        width: 100000000% !important;
+        display: inline-block;
+
+      }
+
+
+}
