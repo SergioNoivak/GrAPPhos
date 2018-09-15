@@ -31,11 +31,15 @@ export class ConstrutorDeGrafoTeorico {
 
 
       arestaTeorica.peso = valorPeso;
+
       GrafoTeorico.vetor[valorSourceDaTela].Adj[valorTargetDaTela] = arestaTeorica;
       if (naoDir) {
         arestaTeorica.peso = valorPeso;
         GrafoTeorico.vetor[valorTargetDaTela].Adj[valorSourceDaTela] = arestaTeorica;
       }
+
+
+
     })
 
 

@@ -14,8 +14,8 @@ export class ConfiguradorDeLatex {
             for (const chave in no.Adj) {
               const noAdj = no.Adj[chave];
     
-              arestas = arestas.concat(no.nome);
-              arestas = arestas.concat(chave + ',');
+              arestas = arestas.concat('('+no.nome);
+              arestas = arestas.concat(','+ chave + ')'+',');
             }
     
           }

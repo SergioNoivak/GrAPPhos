@@ -48,6 +48,7 @@ export class ExplorarConstelacoesPage {
     this.configuracoesDeCriacao = new ConfiguracoesDeCriacao();
     this.grafoInterface = this.configuradorDeAreaDeDesenho.gerarGrafo(this.configuracoesDeCriacao, "cyExplorar");
     this.configuradorDeAreaDeDesenho.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface, this.configuracoesDeCriacao, "explorar-constelacoes-1");
+    this.configuracoesDeCriacao.contagem=0;
 
   }
 
@@ -67,5 +68,14 @@ export class ExplorarConstelacoesPage {
   clicouGerar() {
 
     this.configuracoesDeCriacao.possivelCriarNo = 1;
+  }
+
+  clicouLimpar(){
+
+    this.grafoInterface.destroy();
+    this.grafoInterface = this.configuradorDeAreaDeDesenho.gerarGrafo(this.configuracoesDeCriacao, "cyExplorar");
+    this.configuradorDeAreaDeDesenho.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface, this.configuracoesDeCriacao, "explorar-constelacoes-1");
+    this.atualizarEquacaoLatex();
+    this.configuracoesDeCriacao.contagem=0;
   }
 }
