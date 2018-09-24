@@ -1,0 +1,207 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "weight": 10,
+          "label": 1,
+          "id": "eaeb3eb9-38d6-499c-9d5f-6f423d8ec82f"
+        },
+        "position": {
+          "x": 95,
+          "y": 89.3125
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": true,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "weight": 10,
+          "label": 2,
+          "id": "f55a3c48-44d6-4ec8-bdda-392155b0c7cc"
+        },
+        "position": {
+          "x": 127.5,
+          "y": 143.0625
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "weight": 10,
+          "label": 3,
+          "id": "c564ce7c-4957-4c6e-a385-c11f9a862742"
+        },
+        "position": {
+          "x": 153.75,
+          "y": 194.3125
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "weight": 10,
+          "label": 4,
+          "id": "6b44b1d6-75b2-4518-9b87-03ad228d0634"
+        },
+        "position": {
+          "x": 142.5,
+          "y": 308.0625
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "weight": 10,
+          "label": 5,
+          "id": "2f7e36af-8668-4597-ad22-62c9c7723a3c"
+        },
+        "position": {
+          "x": 305,
+          "y": 246.8125
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "label": "1",
+          "source": "2f7e36af-8668-4597-ad22-62c9c7723a3c",
+          "target": "c564ce7c-4957-4c6e-a385-c11f9a862742",
+          "directed": true,
+          "style": {
+            "line-color": "#FFF"
+          },
+          "id": "85f20108-96b1-4ade-aa4e-586e5a226d82"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "label": "1",
+          "source": "c564ce7c-4957-4c6e-a385-c11f9a862742",
+          "target": "6b44b1d6-75b2-4518-9b87-03ad228d0634",
+          "directed": true,
+          "style": {
+            "line-color": "#FFF"
+          },
+          "id": "3be45760-bf25-4099-82a9-fb3e30dd1da4"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "label": "1",
+          "source": "c564ce7c-4957-4c6e-a385-c11f9a862742",
+          "target": "f55a3c48-44d6-4ec8-bdda-392155b0c7cc",
+          "directed": true,
+          "style": {
+            "line-color": "#FFF"
+          },
+          "id": "61a7aa7e-3930-4b42-9dde-687e7b616c6f"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "label": "1",
+          "source": "f55a3c48-44d6-4ec8-bdda-392155b0c7cc",
+          "target": "eaeb3eb9-38d6-499c-9d5f-6f423d8ec82f",
+          "directed": true,
+          "style": {
+            "line-color": "#FFF"
+          },
+          "id": "9e4f360f-1edb-4061-82be-44482e57ad39"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "label": "data(label)",
+        "background-image":"../assets/imgs/star_blue.png",
+        "background-fit": "cover",
+        "background-opacity": "0",
+        "text-valign": "center",
+        "text-halign": "center",
+        "color":"#ffffff"
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 1,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 0,
+    "y": 0
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+}

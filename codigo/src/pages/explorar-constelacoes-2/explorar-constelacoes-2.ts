@@ -19,7 +19,8 @@ import {ConstrutorDeGrafoTeorico} from '../../model/ConstrutorDeGrafoTeorico';
 import * as jquery from './../../assets/jquery.min.js'
 import {KatexOptions} from 'ng-katex';
 import { ConfiguradorDeLatex } from '../../model/ConfiguradorDeLatex';
-
+import { HttpClient } from '@angular/common/http';
+import { BuscadorDeJSON } from '../../model/buscadorDeJSON';
 
 /**
  * Generated class for the ExplorarConstelacoes_2Page page.
@@ -47,25 +48,22 @@ export class ExplorarConstelacoes_2Page {
   configuradorDeAreaDeDesenho: ConfiguradorDeAreaDeDesenho;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
     this.configuradorDeAreaDeDesenho = new ConfiguradorDeAreaDeDesenho();
-
-    console.log("OLHAAAAA:"+this.navParams.get('grafo'));
     
-
+    
   }
-
+  
   ionViewDidLoad() {
 
 
-
-
+        
     this.configuracoesDeCriacao = new ConfiguracoesDeCriacao();
-    this.grafoInterface = this.configuradorDeAreaDeDesenho.gerarGrafo(this.configuracoesDeCriacao, "cyExplorar2");
     
-    this.configuradorDeAreaDeDesenho.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface, this.configuracoesDeCriacao, "explorar-constelacoes-1");
-    this.grafoInterface.json(this.navParams.get('grafo'));
-    this.configuracoesDeCriacao.contagem=0;
+    this.grafoInterface = this.configuradorDeAreaDeDesenho.gerarGrafo(this.configuracoesDeCriacao, "cyExplorar2");
+    this.configuradorDeAreaDeDesenho.popularPorJson(this.grafoInterface,this.http,'aries');
+
+
 
   }
 

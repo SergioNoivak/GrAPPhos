@@ -1,0 +1,107 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "weight": 10,
+          "label": 1,
+          "id": "f7a9f9b2-52e5-4d87-aac9-fbe42a0bebcc"
+        },
+        "position": {
+          "x": 70.5882339477539,
+          "y": 273.51837158203125
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "weight": 10,
+          "label": 2,
+          "id": "7f18ea0d-7ddf-4792-8032-182d4528c6af"
+        },
+        "position": {
+          "x": 134.11764526367188,
+          "y": 205.2830810546875
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "weight": 10,
+          "label": 3,
+          "id": "530ec381-3929-4115-a46b-bd681f465970"
+        },
+        "position": {
+          "x": 202.35293579101562,
+          "y": 265.2830810546875
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": true,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "label": "1",
+          "source": "530ec381-3929-4115-a46b-bd681f465970",
+          "target": "f7a9f9b2-52e5-4d87-aac9-fbe42a0bebcc",
+          "directed": true,
+          "style": {
+            "line-color": "#FFF"
+          },
+          "id": "e3f5afe7-e45c-4f42-8597-5c4896504dfc"
+        },
+        "position": {},
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "classes": ""
+      }
+    ]
+  },
+  "style": [
+    {
+      "selector": "node",
+      "style": {
+        "label": "data(label)"
+        
+
+      }
+    }
+  ],
+  "zoomingEnabled": true,
+  "userZoomingEnabled": true,
+  "zoom": 1,
+  "minZoom": 1e-50,
+  "maxZoom": 1e+50,
+  "panningEnabled": true,
+  "userPanningEnabled": true,
+  "pan": {
+    "x": 0,
+    "y": 0
+  },
+  "boxSelectionEnabled": true,
+  "renderer": {
+    "name": "canvas"
+  }
+}

@@ -1,6 +1,12 @@
 import { PintorGeral } from "./PintorGeral";
 import { ConfiguracoesDeCriacao } from "./configuracoesDeCriacao";
 import * as cytoscape from './../assets/cytoscape'
+import { BuscadorDeJSON } from './buscadorDeJSON';
+
+
+
+
+
 
 export class ConfiguradorDeAreaDeDesenho{
 
@@ -41,6 +47,13 @@ export class ConfiguradorDeAreaDeDesenho{
           });
     }
   
+
+
+  public popularPorJson(grafoInterface:any,http:any,constelacao:string){
+
+      BuscadorDeJSON.construirGrafoDeJSON(grafoInterface,http,constelacao)
+
+    }
   
   
     private adicionarEventoNo(no:any,configuracoesDeCriacao:ConfiguracoesDeCriacao,cy:any){

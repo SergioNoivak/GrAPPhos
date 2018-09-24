@@ -8,7 +8,8 @@ import { KatexModule } from 'ng-katex/ng-katex.js';
     ExplorarConstelacoesPage,
   ],
   imports: [KatexModule,
-    IonicPageModule.forChild(ExplorarConstelacoesPage),
+    IonicPageModule.forChild(ExplorarConstelacoesPage)
+    
   ],
 })
 export class ExplorarConstelacoesPageModule {}
