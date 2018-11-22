@@ -20,7 +20,33 @@ export class HomeProvider {
     console.log('Hello HomeProvider Provider');
   }
 
+  executarDijikstra(cy, naoDir,noInicio,rapidezDaAnimacao){
+  
+  
+    // AlgoritmsDeInterface.desanimarDescobertas(cy)
 
+    // let construtorDeGrafoTeorico: ConstrutorDeGrafoTeorico = new ConstrutorDeGrafoTeorico();
+    // let GrafoTeorico = construtorDeGrafoTeorico.construirGrafoTeorico(cy, naoDir);
+    // console.log(GrafoTeorico);
+    // GrafoTeorico.noInicio =noInicio;
+    // AlgoritmosClassicos.DFS_Visit(GrafoTeorico);
+    // console.log(GrafoTeorico);
+
+
+
+
+    AlgoritmsDeInterface.desanimarDescobertas(cy)
+
+    let construtorDeGrafoTeorico: ConstrutorDeGrafoTeorico = new ConstrutorDeGrafoTeorico();
+    let GrafoTeorico = construtorDeGrafoTeorico.construirGrafoTeorico(cy, naoDir);
+    console.log(GrafoTeorico);
+
+    GrafoTeorico.noInicio =noInicio;
+    AlgoritmosClassicos.Dijkstra(GrafoTeorico);
+      AlgoritmsDeInterface.animarDescobertasArestas(cy,GrafoTeorico,rapidezDaAnimacao)
+
+  
+  }
 
   executarBFS(cy, naoDir,noInicio,rapidezDaAnimacao){
 

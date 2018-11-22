@@ -65,7 +65,7 @@ export class PintorGeral extends ConfiguracoesDeCriacao {
     pintarAresta(cy: any, no: any) {
 
         if (this.noAnterior != no) {
-            var aresta = cy.add({
+            var aresta1 = cy.add({
                 data:
                 {
                     label: '1',
@@ -77,11 +77,28 @@ export class PintorGeral extends ConfiguracoesDeCriacao {
                     }
                 }
             });
+
+
+            var aresta2 = cy.add({
+                data:
+                {
+                    label: '1',
+                    source:no.id(),
+                    target:  this.noAnterior.id(),
+                    directed: true,
+                    style: {
+                        'line-color': '#FFF'
+                    }
+                }
+            });
         }
         
-        aresta.style('line-color', '#ccffff');
-        aresta.style('opacity', '0.5');
-        return aresta;
+        aresta1.style('line-color', '#ccffff');
+        aresta1.style('opacity', '0.5');
+
+        aresta2.style('line-color', '#ccffff');
+        aresta2.style('opacity', '0.5');
+        return aresta1;
     }
 
     constructor() {

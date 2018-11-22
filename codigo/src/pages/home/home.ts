@@ -56,6 +56,14 @@ export class HomePage {
 
       switch(this.algoritmoAtual){
 
+
+          case 'dijkstra':
+
+          this.homeProvider.executarDijikstra(this.grafoInterface,true,this.noInicial,this.rapidezDaAnimacao);
+
+          break;
+
+
         case 'DFS-Visit':
           this.homeProvider.executarDFSVisit(this.grafoInterface,true,this.noInicial,this.rapidezDaAnimacao);
           

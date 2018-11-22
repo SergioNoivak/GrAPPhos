@@ -6,16 +6,7 @@ import { AlgoritmsDeInterface } from './AlgoritmosDeInterface';
 
 
 export class AlgoritmosClassicos{
-   static inicialize_single_source(GrafoTeorico,noInicio)
-    {
-  
-        $.each(GrafoTeorico.vetor, function(index, value) {
-              
-        value.pi = undefined;
-        value.nome==noInicio? value.d = 0 : value.d = undefined ;
-  
-    });
-  }
+
 
 
 
@@ -122,6 +113,70 @@ static BFS_Visit(GrafoTeorico){
 
 
 }
+
+
+
+
+
+
+
+
+
+ static extract_min(queue){
+    queue= queue.sort((ele1,ele2)=>{return ele1.d==ele2.d? 0:(ele1.d<ele2.d? -1:+1);});
+    var min = queue[0];
+    queue.splice(0,1);
+    return min;
+}
+
+
+static fill_queue(GrafoTeorico){
+        
+    var queue = [];
+    $.each(GrafoTeorico.vetor, function(index, value) {
+        queue.push(value);
+    });
+
+
+    return queue.sort((ele1,ele2)=>{return ele1.d==ele2.d? 0:(ele1.d<ele2.d? -1:+1);});
+
+}
+
+ static Dijkstra(GrafoTeorico){
+
+    this._inicialize_single_source(GrafoTeorico);
+    var queue = this.fill_queue(GrafoTeorico);
+    console.log("queueeeeeeeee " + JSON.stringify(  queue)); 
+    GrafoTeorico.vetor[GrafoTeorico.noInicio].descoberto = true;
+
+    while(queue.length>0){
+        var u = this.extract_min(queue);
+
+    $.each(u.Adj, function(fim, aresta) {
+
+        if(GrafoTeorico.vetor[fim].d> GrafoTeorico.vetor[parseInt( u.nome)].d +aresta.peso){
+            GrafoTeorico.vetor[fim].d =GrafoTeorico.vetor[parseInt( u.nome)].d +aresta.peso;
+            GrafoTeorico.vetor[fim].pi = parseInt( u.nome);
+            GrafoTeorico.vetor[fim].descoberto = true;
+            
+        }
+
+    
+    });
+
+    
+    
+}
+
+
+
+console.log(GrafoTeorico);
+}
+
+
+
+
+
 
 
   }
