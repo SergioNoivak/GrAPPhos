@@ -1,0 +1,36 @@
+<ion-content>
+
+  <div id='redesGrafo'></div>
+
+  <ion-slides class='slides'>
+    <ion-slide class="slides__fb">
+      <div class='slides__text'> o Facebook é muito mais do que apenas um conjunto de páginas (vértices),
+        ele é algo que permite a interação entre essas páginas (usuários) através de diversas relações
+        possíveis.   Uma  delas,  talvez  a  mais  popular,  é  a  relação  de  amizade. Como sendo um conjunto de usuários: Grafo do tipo  G = (V,∅)</div>
+      <button class='slides__btn'>Voltar</button>
+      <button (click)='loadGraph(0)' class='slides__btn'>Play</button>
+      <button class='slides__btn'>Prox</button>
+    </ion-slide>
+
+    <ion-slide class="slides__twitter">
+      <div class='slides__text'> Um  usuário  convida alguém para entrar em sua rede de amigos e esta pessoa aceita ou não a solicitação de amizade.
+        Sendo assim,  o Facebook, visto como um conjunto G que contém usuários (vértices), deve então conter um outro conjunto que represente essa relação de amizade entre usuários,
+        ilustrado por um grafo do tipo G = ( V,A )
+      </div>
+      <button class='slides__btn'>Voltar</button>
+      <button (click)='loadGraph(1)' class='slides__btn'>Play</button>
+      <button class='slides__btn'>Prox</button>
+    </ion-slide>
+
+    <ion-slide class="slides__insta">
+      <div class='slides__text'>Existem uários que não fazem parte da mesma rede de amigos.  Neste caso,  o grafo dado é dito grafo desconexo que possui vários componentes que não estão conectados. Desta forma o próprio Facebook pode ser classificado como sendo um grafo desconexo com muitas componentes conexas, cada uma classificada como sendo um subgrafo.</div>
+      <button class='slides__btn'>Voltar</button>
+      <button (click)='loadGraph(2)' class='slides__btn'>Play</button>
+      <button class='slides__btn'>Prox</button>
+    </ion-slide>
+  </ion-slides>
+
+  <button (click)='popPage()'>Leave</button>
+
+
+</ion-content>

@@ -12,8 +12,9 @@ import { ComponentsModule } from '../components/components.module';
 import { GrafoGeralProvider } from '../providers/grafo-geral/grafo-geral';
 import { KatexModule } from 'ng-katex';
 import { CommonModule } from '@angular/common';
-import { PixiModule} from 'angular2pixi';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeProvider } from '../providers/home/home';
+import { HomeModalPage } from '../pages/home-modal/home-modal';
 
 
 
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     TabsPage,
     InicioPage,
+    HomeModalPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,6 @@ import { HttpClientModule } from '@angular/common/http';
     ComponentsModule,
     KatexModule,
     CommonModule,
-    PixiModule,
     HttpClientModule,
 
     
@@ -43,12 +44,14 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     TabsPage,
     InicioPage,
+    HomeModalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GrafoGeralProvider,
+    HomeProvider
   ]
 })
 export class AppModule {}

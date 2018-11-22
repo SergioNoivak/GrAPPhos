@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { GrafoGeralProvider } from '../../providers/grafo-geral/grafo-geral';
-import * as cytoscape from './../../assets/cytoscape'
-import { ConfiguracoesDeCriacao } from '../../model/configuracoesDeCriacao';
-import { ModalController } from 'ionic-angular';
+
 import { ConfiguradorDeAreaDeDesenho } from '../../model/configuradorDeAreaDeDesenho';
+import { NavController, IonicPage, Alert, AlertController, MenuController, NavParams, ModalController, LoadingController } from 'ionic-angular';
+import { HomeProvider } from '../../providers/home/home';
+import { Component } from '@angular/core';
+import { HomeModalPage } from '../home-modal/home-modal';
+
+
 
 
 @IonicPage()
@@ -14,30 +15,91 @@ import { ConfiguradorDeAreaDeDesenho } from '../../model/configuradorDeAreaDeDes
 })
 export class HomePage {
 
-  configuracoesDeCriacao:ConfiguracoesDeCriacao;
+  rapidezDaAnimacao:number = 20;
+  algoritmoAtual:string = 'dijkstra';
+  noInicial:number = 1;
+  variavel:any;
+  alert:Alert;
+  classicos:any;
+  place:string = "";
   grafoInterface:any
-  configuradorDeAreaDeDesenho:ConfiguradorDeAreaDeDesenho;
+  grafoMaster:ConfiguradorDeAreaDeDesenho;
 
-  constructor(public navCtrl: NavController) {
-    this.configuradorDeAreaDeDesenho=new ConfiguradorDeAreaDeDesenho();
-
+  constructor(public navCtrl: NavController,public homeProvider:HomeProvider,public alertCtrl : AlertController,public modalCtrl:ModalController,public loadingCtrl:LoadingController) {
+    this.grafoMaster = new ConfiguradorDeAreaDeDesenho();
+    
   }
-  ionViewDidLoad() 
+  ionViewDidLoad()
   {
-    this.configuracoesDeCriacao = new ConfiguracoesDeCriacao();
-    this.grafoInterface= this.configuradorDeAreaDeDesenho.gerarGrafo(this.configuracoesDeCriacao,"cy");
-    this.configuradorDeAreaDeDesenho.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface,this.configuracoesDeCriacao);
+    this.grafoInterface= this.grafoMaster.gerarGrafo("cy");
+    this.grafoMaster.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface);
   }
 
   clicouDimensionar(){
-
-    this.configuracoesDeCriacao.possivelCriarNo=0;
+    this.grafoMaster.possivelCriarNo=0;
+    console.log(this.grafoInterface.elements().jsons())
   }
 
   clicouGerar(){
-
-    this.configuracoesDeCriacao.possivelCriarNo=1;
+    this.grafoMaster.possivelCriarNo=1;
   }
 
+  executarAlgoritmo(){
+    console.log(this.place);
+  }
+
+  optionsFn(item){
+    console.log(item);
+  }
+
+  getAlgoritmo(){
+
+      // switch(this.algoritmoAtual){
+
+      //   case 'DFS-Visit':
+          // this.homeProvider.executarDFSVisit(this.grafoInterface,true,this.noInicial,this.rapidezDaAnimacao);
+          this.homeProvider.executarDFS(this.grafoInterface,true,this.noInicial,this.rapidezDaAnimacao);
+
+
+      //   break;
+
+
+
+
+
+
+      // }
+
+
+
+ 
+ 
+
+  }
+
+  criarModalAlgoritmos() {
+
+    
+    let modalAlgoritmos = this.modalCtrl.create(HomeModalPage,{noInicial:this.noInicial,algoritmoAtual:this.algoritmoAtual,rapidezDaAnimacao:this.rapidezDaAnimacao});
+    modalAlgoritmos.present();
+
+    modalAlgoritmos.onDidDismiss(dados => {  
+      this.noInicial=dados.noInicial;
+      this.algoritmoAtual = dados.algoritmoAtual;
+      this.rapidezDaAnimacao=dados.rapidezDaAnimacao;
+      });
+  }
+
+  public resetarTela(){
+      this.grafoInterface.destroy();
+      this.grafoMaster = new ConfiguradorDeAreaDeDesenho();
+      this.grafoInterface= this.grafoMaster.gerarGrafo("cy");
+      this.grafoMaster.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface);
+  
+
+  }
+  
 
 }
+
+

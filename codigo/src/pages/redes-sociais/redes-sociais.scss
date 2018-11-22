@@ -1,0 +1,42 @@
+page-redes-sociais {
+  @import url('https://fonts.googleapis.com/css?family=Lato');
+
+  #redesGrafo{
+    width: 100%;
+    height: 60%;
+    background-color: black;
+  }
+
+  .slides{
+    height: 40%;
+    &__fb {
+      background-color: #3b5998;
+    }
+    &__twitter {
+      background-color: #1da1f2;
+    }
+    &__insta{
+      background-color: #405de6;
+    }
+    &__btn{
+      width: 8rem;
+      height: 3rem;
+      margin: 1.5%;
+      font-family: 'Lato', sans-serif;
+      background-color: inherit;
+      border: 1px solid whitesmoke;
+      color: white;
+      &:hover{
+        box-shadow: 0px 0px 3px 0px whitesmoke;
+      }
+    }
+    &__text{
+      width: 90%;
+      margin: 0 auto;
+      height: 50%;
+      font-size: 1.2rem;
+      text-align: justify;
+      color: white;
+    }
+  }
+}

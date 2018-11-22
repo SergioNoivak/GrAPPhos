@@ -1,4 +1,4 @@
-import { Injectable, Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ConfiguracoesDeCriacao } from '../../model/configuracoesDeCriacao';
 import { PintorGeral } from '../../model/PintorGeral';
 import * as cytoscape from './../../assets/cytoscape'
@@ -59,7 +59,7 @@ export class GrafoGeralProvider {
 
 
         if(configuracoesDeCriacao.noAnterior.id()!=no.id())
-        var aresta = this.pintorGeral.pintarAresta(cy,configuracoesDeCriacao,no);
+        this.pintorGeral.pintarAresta(cy,no);
         configuracoesDeCriacao.possivelCriarAresta=0;
 
           

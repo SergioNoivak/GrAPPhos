@@ -1,66 +1,75 @@
-
-
-
-
-
-
 <ion-content>
 
-    <ion-header>
-
-        
-        <ion-navbar>
-            <ion-row>
-                <div col col-2>
-                    <button (click)= "clicouDimensionar()" ion-button small start color="primary">
-                        <img src="../../assets/icon/move-option.png" alt="">
-                        
-                    </button>
-                </div>
-                <div col col-2>
-
-                <button (click)= "clicouGerar()" ion-button small start color="primary">
-                    <img src="../../assets/icon/networking.png" alt="">
-                    
-                </button>
-            </div>
-
-        <div col col-4>
+  <ion-header>
 
 
-            <ion-list>
-                <ion-item>
-                    <ion-label>Algoritmo</ion-label>
-                    <ion-select multiple="true" cancelText="Nah" okText="Okay!">
-                        <ion-option value="Dijkstra" selected="true">Dijkstra</ion-option>
-        
-                    </ion-select>
-                </ion-item>
-            </ion-list>
+    <ion-navbar>
+      <ion-row>
+        <div col col-2>
+          <button (click)="clicouDimensionar()" ion-button small start color="primary">
+            <img src="../../assets/icon/move-option.png" alt="">
+
+          </button>
         </div>
         <div col col-2>
 
-                <button ion-button small start color="secondary">
-                    <img src="../../assets/play-button.png" alt="">
-                    
-                </button>
-            </div>
-            <div col col-2>
+          <button (click)="clicouGerar()" ion-button small start color="primary">
+            <img src="../../assets/icon/networking.png" alt="">
 
-                    <button ion-button small start color="light">
-                            <ion-icon name="menu"></ion-icon>
-                        
-                    </button>
-                </div>
+          </button>
+        </div>
+
+        <div col col-4>
+
+            <button  ion-button small color="danger" >
+                <img src="../../assets/icon/del.png" alt="">
+
+            </button>
+            <button ion-button small color="danger" >
+                <img (click)="resetarTela()" src="../../assets/icon/trash.png" alt="">
+
+            </button>
+
             
-        </ion-row>
+        </div>
+        <div col col-2>
+
+
+          <button (click) = "getAlgoritmo()" ion-button small start color="secondary">
+
+            <!-- AQUI TEM UM BOTAO DE PLAY -->
+            <img  src="../../assets/play-button.png" alt="">
+
+          </button>
+        </div>
+        <div col col-2>
+
+            <!-- <button (click) = "presentConfirm()" ion-button small start color="light">
+            <ion-icon name="menu"></ion-icon>
+
+          </button>
+         -->
+         
+         
+         <button ion-button small (click)="criarModalAlgoritmos()">+</button>
+
+
+
+
+
+        
+
+
+          </div>
+
+      </ion-row>
     </ion-navbar>
-            
-      </ion-header>
-      
+
+  </ion-header>
+
   <ion-row>
 
-    <div  id="cy">
+    <div id="cy" #abc>
 
     </div>
 

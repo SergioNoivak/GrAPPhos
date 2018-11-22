@@ -1,0 +1,105 @@
+<!--
+  Generated template for the HomeModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Configurações de execução</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+  
+
+
+
+
+
+<ion-content padding>
+   <ion-list>
+            <ion-item>
+              <ion-label>Algoritmo</ion-label>
+              <ion-select [(ngModel)]="algoritmoAtual" cancelText="" okText="Ok">
+                <ion-option value="dijkstra">Dijkstra</ion-option>
+                <ion-option value="DFS">DFS</ion-option>
+                <ion-option value="DFS-Visit">DFS-Visit</ion-option>
+                <ion-option value="BFS">BFS</ion-option>
+              </ion-select>
+            </ion-item>
+    </ion-list>
+
+    <ion-list>
+
+        <ion-item>
+          <ion-label>No Inicial</ion-label>
+          <ion-input type="number" [(ngModel)]="noInicial"  ></ion-input>
+        </ion-item>
+        <ion-label>Rapidez do algoritmo: nivel Atual {{rapidezDaAnimacao}}</ion-label>
+
+        <ion-item>
+            <ion-range  min="1" [(ngModel)]="rapidezDaAnimacao">
+
+            </ion-range>
+          </ion-item>
+
+
+        <div class="botaoSalvar">
+          
+          <button ion-button color="secondary" (click)="fecharModal()">Salvar</button>
+        </div>
+
+      
+      </ion-list>
+
+
+      <ion-card>
+
+          <ion-card-header>
+            Detalhes da ultima execução
+          </ion-card-header>
+        
+          <ion-card-content>
+
+              <table>
+                  <thead>
+                  <tr>
+                    <th>Nó</th>
+                    <th>Momento descoberta</th>
+                    <th>antecessor</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>James</td>
+
+                  </tr>
+                  <tr>
+                    <td>The</td>
+
+                  </tr>
+                  <tr>
+                    <td>Jokey</td>
+          
+                  </tr>
+                  <tr>
+                    <td>Cindy</td>
+                  </tr>
+                  </tbody>
+                </table>
+              
+
+
+
+
+
+
+          </ion-card-content>
+        
+        </ion-card>
+
+
+</ion-content>

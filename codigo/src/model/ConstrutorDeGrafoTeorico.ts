@@ -1,11 +1,9 @@
-import * as cytoscape from './../assets/cytoscape'
-
-
 export class ConstrutorDeGrafoTeorico {
 
   public construirGrafoTeorico(cy, naoDir) {
     var GrafoTeorico = {
       vetor: {},
+      noInicio: undefined
     }
 
     cy.nodes().map(noDaTela => {

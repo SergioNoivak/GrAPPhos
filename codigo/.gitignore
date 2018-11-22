@@ -6,6 +6,7 @@
 *.log
 *.tmp
 *.tmp.*
+package-lock.json
 log.txt
 *.sublime-project
 *.sublime-workspace

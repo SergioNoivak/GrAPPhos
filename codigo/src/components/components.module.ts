@@ -10,6 +10,7 @@ import { LerMotivacaoComponent } from './ler-motivacao/ler-motivacao';
 import { LerClassesComunsDeGrafosComponent } from './ler-classes-comuns-de-grafos/ler-classes-comuns-de-grafos';
 import { LerPropriedadesDoGrafoCompletoComponent } from './ler-propriedades-do-grafo-completo/ler-propriedades-do-grafo-completo';
 import { LerIsomorfismoComponent } from './ler-isomorfismo/ler-isomorfismo';
+import { ModalAlgoritmosComponent } from './modal-algoritmos/modal-algoritmos';
 @NgModule({
 	declarations: [MeuComponenteVideoComponent,
     Leitura,
@@ -19,14 +20,13 @@ import { LerIsomorfismoComponent } from './ler-isomorfismo/ler-isomorfismo';
     LerClassesComunsDeGrafosComponent,
     LerPropriedadesDoGrafoCompletoComponent,
     LerIsomorfismoComponent,
+    ModalAlgoritmosComponent,
     ],
 	imports: [
 
 		KatexModule,
 		CommonModule,
-		IonicModule
-
-
+        IonicModule,
 	],
 	exports: [MeuComponenteVideoComponent,
 		Leitura,
@@ -36,6 +36,7 @@ import { LerIsomorfismoComponent } from './ler-isomorfismo/ler-isomorfismo';
     LerClassesComunsDeGrafosComponent,
     LerPropriedadesDoGrafoCompletoComponent,
     LerIsomorfismoComponent,
+    ModalAlgoritmosComponent,
     ]
 })
 export class ComponentsModule {}

@@ -11,9 +11,7 @@ export class ConfiguradorDeLatex {
             const no = GrafoTeorico.vetor[key];
             vertices = vertices.concat(no.nome + ',');
     
-            for (const chave in no.Adj) {
-              const noAdj = no.Adj[chave];
-    
+            for (const chave in no.Adj) {    
               arestas = arestas.concat('('+no.nome);
               arestas = arestas.concat(','+ chave + ')'+',');
             }

@@ -1,8 +1,4 @@
-import {
-  Component,
-  ViewChild,
-  ElementRef
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 
 import {
@@ -11,16 +7,10 @@ import {
   NavParams
 } from 'ionic-angular';
 
-import {ConfiguracoesDeCriacao} from '../../model/configuracoesDeCriacao';
-import {GrafoGeralProvider} from '../../providers/grafo-geral/grafo-geral';
 import {ConfiguradorDeAreaDeDesenho} from '../../model/configuradorDeAreaDeDesenho';
-import * as cytoscape from './../../assets/cytoscape'
 import {ConstrutorDeGrafoTeorico} from '../../model/ConstrutorDeGrafoTeorico';
-import * as jquery from './../../assets/jquery.min.js'
-import {KatexOptions} from 'ng-katex';
 import { ConfiguradorDeLatex } from '../../model/ConfiguradorDeLatex';
 import { HttpClient } from '@angular/common/http';
-import { BuscadorDeJSON } from '../../model/buscadorDeJSON';
 
 /**
  * Generated class for the ExplorarConstelacoes_2Page page.
@@ -43,28 +33,17 @@ export class ExplorarConstelacoes_2Page {
 
 
   isSelecionadoBotao: any;
-  configuracoesDeCriacao: ConfiguracoesDeCriacao;
   grafoInterface: any;
-  configuradorDeAreaDeDesenho: ConfiguradorDeAreaDeDesenho;
+  grafoMaster: ConfiguradorDeAreaDeDesenho;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
-    this.configuradorDeAreaDeDesenho = new ConfiguradorDeAreaDeDesenho();
-    
-    
+    this.grafoMaster = new ConfiguradorDeAreaDeDesenho();
   }
-  
+
   ionViewDidLoad() {
-
-
-        
-    this.configuracoesDeCriacao = new ConfiguracoesDeCriacao();
-    
-    this.grafoInterface = this.configuradorDeAreaDeDesenho.gerarGrafo(this.configuracoesDeCriacao, "cyExplorar2");
-    this.configuradorDeAreaDeDesenho.popularPorJson(this.grafoInterface,this.http,'aries');
-
-
-
+    this.grafoInterface = this.grafoMaster.gerarGrafo("cyExplorar2");
+    this.grafoMaster.popularPorJson(this.grafoInterface,this.http,'aries');
   }
 
   atualizarEquacaoLatex() {
@@ -77,21 +56,20 @@ export class ExplorarConstelacoes_2Page {
 
   clicouDimensionar() {
 
-    this.configuracoesDeCriacao.possivelCriarNo = 0;
+    this.grafoMaster.possivelCriarNo = 0;
   }
 
   clicouGerar() {
 
-    this.configuracoesDeCriacao.possivelCriarNo = 1;
+    this.grafoMaster.possivelCriarNo = 1;
   }
 
   clicouLimpar(){
-
     this.grafoInterface.destroy();
-    this.grafoInterface = this.configuradorDeAreaDeDesenho.gerarGrafo(this.configuracoesDeCriacao, "cyExplorar2");
-    this.configuradorDeAreaDeDesenho.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface, this.configuracoesDeCriacao, "explorar-constelacoes-1");
+    this.grafoInterface = this.grafoMaster.gerarGrafo("cyExplorar2");
+    this.grafoMaster.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface, "explorar-constelacoes-1");
     this.atualizarEquacaoLatex();
-    this.configuracoesDeCriacao.contagem=0;
+    this.grafoMaster.contagem=0;
   }
 
 

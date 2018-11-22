@@ -19,7 +19,7 @@ export class ExplorarPage {
 
   startExplocaracao(nomeExploracao:string)
   {
-    this.navCtrl.push('ExplorarConstelacoesPage');
+    this.navCtrl.push(nomeExploracao);
   }
 
 
