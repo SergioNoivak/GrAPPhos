@@ -14,7 +14,42 @@ export class AlgoritmsDeInterface{
        
       }
     
+      static desanimarNos_e_Arestas(cy){
 
+
+        cy.nodes().forEach(node=>{
+            node.removeStyle();
+            node.style({
+                'background-opacity': 0.5,
+                'border-width': 2,
+                'border-color': 'white',
+                "text-valign": "center",
+                "text-halign": "center",
+                "color": "#ffffff"
+
+            
+            });
+
+
+            
+                    
+        })
+
+
+        cy.edges().forEach(edge=>{
+
+
+            edge.removeStyle();
+            edge.style({
+                "line-color": "#ccffff",
+                "opacity": 1            
+            });
+
+        })
+
+
+
+      }
 
       static desanimarDescobertas(cy){
 
@@ -22,7 +57,7 @@ export class AlgoritmsDeInterface{
         cy.nodes().forEach(node=>{
             node.removeStyle();
             node.style({
-                'background-opacity': 0,
+                'background-opacity': 0.5,
                 'border-width': 2,
                 'border-color': 'white',
                 "text-valign": "center",
@@ -68,7 +103,7 @@ export class AlgoritmsDeInterface{
         
             }).delay(fator==0? 0:  +(10000/rapidezDaAnimacao)*fator).animate({
                 style: {
-                    'background-opacity': 1,
+                    'background-opacity': 0.5,
                     'border-color': 'white',
                     "background-color": "#ff0000"            },
                 duration: 1
@@ -86,7 +121,7 @@ export class AlgoritmsDeInterface{
 
 
 
-    static animarDescobertasArestas(cy,GrafoTeorico,rapidezDaAnimacao){
+    static animarDescobertasArestas_e_nos(cy,GrafoTeorico,rapidezDaAnimacao){
 
 
         let vetor = [];
@@ -127,7 +162,7 @@ export class AlgoritmsDeInterface{
         
             }).delay(fator==0? 0:  +(10000/rapidezDaAnimacao)*fator).animate({
                 style: {
-                    'background-opacity': 1,
+                    'background-opacity': 0.5,
                     'border-color': 'white',
                     "background-color": "#ff0000"            },
                 duration: 1
@@ -161,20 +196,9 @@ export class AlgoritmsDeInterface{
                                     duration: 1
                                 });
         
-
-
-
             }
 
-
-
-
             noAnterior = noAnimado;
-
-
-
-
-            
              fator++;   
         });
         

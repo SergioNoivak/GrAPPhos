@@ -15,6 +15,9 @@ import { HomeModalPage } from '../home-modal/home-modal';
 })
 export class HomePage {
 
+ public noDeApagar:number = 1;
+ public no1DeApagar:number = 1;
+ public no2DeApagar:number = 1;
   rapidezDaAnimacao:number = 20;
   algoritmoAtual:string = 'dijkstra';
   noInicial:number = 1;
@@ -23,25 +26,67 @@ export class HomePage {
   classicos:any;
   place:string = "";
   grafoInterface:any
-  grafoMaster:ConfiguradorDeAreaDeDesenho;
+  configuradorDeAreaDeDesenho:ConfiguradorDeAreaDeDesenho;
 
   constructor(public navCtrl: NavController,public homeProvider:HomeProvider,public alertCtrl : AlertController,public modalCtrl:ModalController,public loadingCtrl:LoadingController) {
-    this.grafoMaster = new ConfiguradorDeAreaDeDesenho();
+    this.configuradorDeAreaDeDesenho = new ConfiguradorDeAreaDeDesenho();
+ 
     
+
+
+  }
+  NoDeApagar(){
+
+
+      this.noDeApagar =  +this.grafoInterface.ultimoNoClicado.data('label');
+
+
+
+      
+  }
+
+  NoDeApagar1(){
+    this.no1DeApagar =  +this.grafoInterface.ultimoNoClicado.data('label');
+
+
+  }
+
+  NoDeApagar2(){
+
+    this.no2DeApagar =  +this.grafoInterface.ultimoNoClicado.data('label');
+
+
   }
   ionViewDidLoad()
   {
-    this.grafoInterface= this.grafoMaster.gerarGrafo("cy");
-    this.grafoMaster.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface);
+    this.grafoInterface= this.configuradorDeAreaDeDesenho.gerarGrafo("cy");
+    this.configuradorDeAreaDeDesenho.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface);
+
+    
+  
+  }
+  ionViewDidEnter	(){
+
+
+
+  }
+
+
+  clickAtualizar(){
+
+
+    console.log("evnt ")
+
+
   }
 
   clicouDimensionar(){
-    this.grafoMaster.possivelCriarNo=0;
+    this.configuradorDeAreaDeDesenho.possivelCriarNo=0;
     console.log(this.grafoInterface.elements().jsons())
   }
 
   clicouGerar(){
-    this.grafoMaster.possivelCriarNo=1;
+    this.configuradorDeAreaDeDesenho.possivelCriarNo=1;
   }
 
   executarAlgoritmo(){
@@ -51,7 +96,11 @@ export class HomePage {
   optionsFn(item){
     console.log(item);
   }
+  habilitarDeletar(){
 
+
+
+  }
   getAlgoritmo(){
 
       switch(this.algoritmoAtual){
@@ -106,10 +155,34 @@ export class HomePage {
 
   public resetarTela(){
       this.grafoInterface.destroy();
-      this.grafoMaster = new ConfiguradorDeAreaDeDesenho();
-      this.grafoInterface= this.grafoMaster.gerarGrafo("cy");
-      this.grafoMaster.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface);
+      this.configuradorDeAreaDeDesenho = new ConfiguradorDeAreaDeDesenho();
+      this.grafoInterface= this.configuradorDeAreaDeDesenho.gerarGrafo("cy");
+      this.configuradorDeAreaDeDesenho.adicionarEventosAreaDeDesenhoGrafoGeral(this.grafoInterface);
   
+
+  }
+
+  deletarNo(){
+        let no =  this.grafoInterface.nodes('[label='+this.noDeApagar+']')
+        if(no.nonempty())
+        this.grafoInterface.remove(no);
+  }
+
+  deletarAresta(){
+
+
+    let no1 =  this.grafoInterface.nodes('[label='+this.no1DeApagar+']');
+    let no2 =  this.grafoInterface.nodes('[label='+this.no2DeApagar+']');
+    let arestas1 = no1.edgesTo(no2)
+    let arestas2 = no2.edgesTo(no1)
+
+
+    if(arestas1.nonempty())
+    this.grafoInterface.remove(arestas1);
+    if(arestas2.nonempty())
+    this.grafoInterface.remove(arestas2);
+
+
 
   }
   

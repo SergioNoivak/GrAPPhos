@@ -59,6 +59,7 @@ export class PintorGeral extends ConfiguracoesDeCriacao {
         }
         
         no = cy.add(config);
+       
         return no
     }
 
@@ -68,36 +69,36 @@ export class PintorGeral extends ConfiguracoesDeCriacao {
             var aresta1 = cy.add({
                 data:
                 {
-                    label: '1',
+                    label: 1,
                     source: this.noAnterior.id(),
                     target: no.id(),
                     directed: true,
                     style: {
-                        'line-color': '#FFF'
+                        'line-color': '#FFF',
+                        'text-background-color' : '#FFF',
                     }
-                }
+                },
             });
 
 
             var aresta2 = cy.add({
                 data:
                 {
-                    label: '1',
+                    label: 1,
                     source:no.id(),
                     target:  this.noAnterior.id(),
                     directed: true,
                     style: {
                         'line-color': '#FFF'
-                    }
+                    },
                 }
             });
         }
         
         aresta1.style('line-color', '#ccffff');
-        aresta1.style('opacity', '0.5');
+        
 
         aresta2.style('line-color', '#ccffff');
-        aresta2.style('opacity', '0.5');
         return aresta1;
     }
 

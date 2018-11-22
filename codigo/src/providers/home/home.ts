@@ -22,20 +22,9 @@ export class HomeProvider {
 
   executarDijikstra(cy, naoDir,noInicio,rapidezDaAnimacao){
   
-  
-    // AlgoritmsDeInterface.desanimarDescobertas(cy)
-
-    // let construtorDeGrafoTeorico: ConstrutorDeGrafoTeorico = new ConstrutorDeGrafoTeorico();
-    // let GrafoTeorico = construtorDeGrafoTeorico.construirGrafoTeorico(cy, naoDir);
-    // console.log(GrafoTeorico);
-    // GrafoTeorico.noInicio =noInicio;
-    // AlgoritmosClassicos.DFS_Visit(GrafoTeorico);
-    // console.log(GrafoTeorico);
 
 
-
-
-    AlgoritmsDeInterface.desanimarDescobertas(cy)
+    AlgoritmsDeInterface.desanimarNos_e_Arestas(cy)
 
     let construtorDeGrafoTeorico: ConstrutorDeGrafoTeorico = new ConstrutorDeGrafoTeorico();
     let GrafoTeorico = construtorDeGrafoTeorico.construirGrafoTeorico(cy, naoDir);
@@ -43,7 +32,7 @@ export class HomeProvider {
 
     GrafoTeorico.noInicio =noInicio;
     AlgoritmosClassicos.Dijkstra(GrafoTeorico);
-      AlgoritmsDeInterface.animarDescobertasArestas(cy,GrafoTeorico,rapidezDaAnimacao)
+      AlgoritmsDeInterface.animarDescobertasArestas_e_nos(cy,GrafoTeorico,rapidezDaAnimacao)
 
   
   }
@@ -52,7 +41,7 @@ export class HomeProvider {
 
 
 
-    AlgoritmsDeInterface.desanimarDescobertas(cy)
+    AlgoritmsDeInterface.desanimarNos_e_Arestas(cy)
 
     let construtorDeGrafoTeorico: ConstrutorDeGrafoTeorico = new ConstrutorDeGrafoTeorico();
     let GrafoTeorico = construtorDeGrafoTeorico.construirGrafoTeorico(cy, naoDir);
@@ -67,7 +56,7 @@ export class HomeProvider {
 
         console.log("NO INICIO: "+GrafoTeorico.noInicio)
         AlgoritmosClassicos.BFS_Visit(GrafoTeorico);
-        AlgoritmsDeInterface.animarDescobertas(cy,GrafoTeorico,rapidezDaAnimacao)
+        AlgoritmsDeInterface.animarDescobertasArestas_e_nos(cy,GrafoTeorico,rapidezDaAnimacao)
         
         GrafoTeorico.noInicio =key;
 
@@ -76,7 +65,7 @@ export class HomeProvider {
       if(!GrafoTeorico.vetor[GrafoTeorico.noInicio].descoberto){
          AlgoritmosClassicos.DFS_Visit(GrafoTeorico);
         
-         AlgoritmsDeInterface.animarDescobertas(cy,GrafoTeorico,rapidezDaAnimacao)
+         AlgoritmsDeInterface.animarDescobertasArestas_e_nos(cy,GrafoTeorico,rapidezDaAnimacao)
       }
     });
 
@@ -92,7 +81,7 @@ export class HomeProvider {
 
 
 
-    AlgoritmsDeInterface.desanimarDescobertas(cy)
+    AlgoritmsDeInterface.desanimarNos_e_Arestas(cy)
 
     let construtorDeGrafoTeorico: ConstrutorDeGrafoTeorico = new ConstrutorDeGrafoTeorico();
     let GrafoTeorico = construtorDeGrafoTeorico.construirGrafoTeorico(cy, naoDir);
@@ -130,7 +119,7 @@ export class HomeProvider {
 
   executarDFSVisit(cy, naoDir,noInicio,rapidezDaAnimacao){
 
-    AlgoritmsDeInterface.desanimarDescobertas(cy)
+    AlgoritmsDeInterface.desanimarNos_e_Arestas(cy)
 
     let construtorDeGrafoTeorico: ConstrutorDeGrafoTeorico = new ConstrutorDeGrafoTeorico();
     let GrafoTeorico = construtorDeGrafoTeorico.construirGrafoTeorico(cy, naoDir);

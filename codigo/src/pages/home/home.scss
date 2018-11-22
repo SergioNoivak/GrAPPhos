@@ -8,8 +8,9 @@ page-home {
 
 
     }
-        #cy {
-            margin-top: 60px;
+    .scroll-content {
+        overflow-y: hidden !important;
+    }      #cy {
             position: absolute;
             left: 0;
             top: 0;
@@ -19,7 +20,6 @@ page-home {
             background-color: #003380;
             height: 100%;
             width: 100%;
-    
             z-index: 2;
 
         }

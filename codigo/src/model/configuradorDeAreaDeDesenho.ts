@@ -1,6 +1,11 @@
 import { PintorGeral } from "./PintorGeral";
 import * as cytoscape from './../assets/cytoscape'
 import { BuscadorDeJSON } from './buscadorDeJSON';
+import * as $ from "../assets/jquery.min.js";
+import { EventEmitter } from "@angular/core";
+
+
+let event:EventEmitter<any> = new EventEmitter();
 
 export class ConfiguradorDeAreaDeDesenho extends PintorGeral {
 
@@ -16,7 +21,13 @@ export class ConfiguradorDeAreaDeDesenho extends PintorGeral {
           style: {
             'label': 'data(label)',
           }
-        }
+        },
+        {
+          "selector": "edge",
+          "style": {
+            "label": "data(label)",
+          }
+        },
       ]
     });
     return cy;
@@ -43,7 +54,7 @@ export class ConfiguradorDeAreaDeDesenho extends PintorGeral {
         }
 
         this.possivelCriarNo=0;
-
+        cy.ultimoNoClicado = no;
       })
 
       no.on("tapend ",evt=>{
@@ -67,4 +78,16 @@ export class ConfiguradorDeAreaDeDesenho extends PintorGeral {
       alert(conectados);
     })
   }
+
+
+
+
+
+
+
+
 }
+
+
+
+

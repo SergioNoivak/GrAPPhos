@@ -1,11 +1,13 @@
-<ion-content>
+<ion-content >
 
   <ion-header>
 
+    
 
     <ion-navbar>
       <ion-row>
         <div col col-2>
+
           <button (click)="clicouDimensionar()" ion-button small start color="primary">
             <img src="../../assets/icon/move-option.png" alt="">
 
@@ -21,10 +23,7 @@
 
         <div col col-4>
 
-            <button  ion-button small color="danger" >
-                <img src="../../assets/icon/del.png" alt="">
-
-            </button>
+         
             <button ion-button small color="danger" >
                 <img (click)="resetarTela()" src="../../assets/icon/trash.png" alt="">
 
@@ -36,7 +35,7 @@
 
 
           <button (click) = "getAlgoritmo()" ion-button small start color="secondary">
-
+            
             <!-- AQUI TEM UM BOTAO DE PLAY -->
             <img  src="../../assets/play-button.png" alt="">
 
@@ -67,17 +66,71 @@
 
   </ion-header>
 
-  <ion-row>
+  <ion-row >
 
-    <div id="cy" #abc>
+    <div  id="cy" #abc>
 
     </div>
 
   </ion-row>
 
 
-  <ion-row>
 
 
-  </ion-row>
-</ion-content>
+
+</ion-content >
+      <ion-footer>
+      
+        
+
+        <ion-row>
+          <ion-col col-3>
+
+              <ion-item>
+                  <ion-label floating>No</ion-label>
+                  <ion-input (click) = "NoDeApagar()" [(ngModel)]="noDeApagar" value="1" id="No" type="number"></ion-input>
+                </ion-item>
+              
+              </ion-col>
+
+          <ion-col col-5>
+
+              <ion-item>
+                  <ion-label floating>Aresta:inicio</ion-label>
+                  <ion-input  (click) = "NoDeApagar1()" [(ngModel)]="no1DeApagar" type="number"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col col-4>
+
+                <ion-item>
+                    <ion-label floating>Aresta:fim</ion-label>
+                    <ion-input (click) = "NoDeApagar2()" [(ngModel)]="no2DeApagar" type="number"></ion-input>
+                  </ion-item>
+              </ion-col>
+        </ion-row>
+          
+
+        <ion-buttons>
+
+
+          
+          <button  ion-button small color="danger" (click)="deletarNo()" >
+            <img src="../../assets/icon/del.png" alt="">
+            No
+          </button>
+          
+          
+          
+          <button (click)="deletarAresta()"  ion-button small color="danger" (click)="habilitarDeletar()" >
+            <img src="../../assets/icon/del.png" alt="">
+            Aresta            
+          </button>
+
+          <button   ion-button small color="secondary"  >
+              <img src="../../assets/icon/del.png" alt="">
+              Atualizar            
+            </button>
+        </ion-buttons>
+          
+          
+      </ion-footer>
