@@ -27,7 +27,6 @@ export class AlgoritmosClassicos{
          
          value.d =Number.MAX_VALUE;
          value.pi = undefined;
-         GrafoTeorico.vetor[index].descoberto = false;
      });
 
      GrafoTeorico.vetor[parseInt(GrafoTeorico.noInicio)].d = 0;
@@ -78,12 +77,51 @@ export class AlgoritmosClassicos{
         
     }
 
+  }
+static BFS_Visit(GrafoTeorico){
+
+    this._inicialize_single_source(GrafoTeorico);
+    let contadorDescobertas =0;
+    let piCorrente = undefined;
+    let queue =[];
+    let descoberto ={};
+
+    $.each(GrafoTeorico.vetor, function(key, value) {
+    
+        descoberto[parseInt(key)]=false;
+    
+    });
+
+
+    queue.push(GrafoTeorico.noInicio);
+
+    
+    while(queue.length!=0){
+            console.log('stack'+queue)
+        let v = queue.shift();
+        contadorDescobertas++;
+        GrafoTeorico.vetor[v].d = contadorDescobertas;
+        
+
+        if(!descoberto[v]){
+            GrafoTeorico.vetor[v].descoberto = true;
+            descoberto[v] =true;
+
+            $.each(GrafoTeorico.vetor[v].Adj, (inicio)=>{
+                
+                if(!descoberto[inicio]){
+                queue.push(parseInt(inicio))
+                GrafoTeorico.vetor[inicio].pi =v;
+            }
+        });   
+    }
+        
+    }
+
+
+
+
 }
 
 
-
-
-
-
-
-}
+  }

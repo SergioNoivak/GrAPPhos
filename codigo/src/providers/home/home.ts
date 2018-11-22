@@ -20,6 +20,47 @@ export class HomeProvider {
     console.log('Hello HomeProvider Provider');
   }
 
+
+
+  executarBFS(cy, naoDir,noInicio,rapidezDaAnimacao){
+
+
+
+    AlgoritmsDeInterface.desanimarDescobertas(cy)
+
+    let construtorDeGrafoTeorico: ConstrutorDeGrafoTeorico = new ConstrutorDeGrafoTeorico();
+    let GrafoTeorico = construtorDeGrafoTeorico.construirGrafoTeorico(cy, naoDir);
+    console.log(GrafoTeorico);
+
+    GrafoTeorico.noInicio =noInicio;
+
+
+    $.each(GrafoTeorico.vetor, function(key, value) {
+     
+      if(!GrafoTeorico.vetor[key].descoberto){
+
+        console.log("NO INICIO: "+GrafoTeorico.noInicio)
+        AlgoritmosClassicos.BFS_Visit(GrafoTeorico);
+        AlgoritmsDeInterface.animarDescobertas(cy,GrafoTeorico,rapidezDaAnimacao)
+        
+        GrafoTeorico.noInicio =key;
+
+      }
+
+      if(!GrafoTeorico.vetor[GrafoTeorico.noInicio].descoberto){
+         AlgoritmosClassicos.DFS_Visit(GrafoTeorico);
+        
+         AlgoritmsDeInterface.animarDescobertas(cy,GrafoTeorico,rapidezDaAnimacao)
+      }
+    });
+
+
+
+
+    console.log(GrafoTeorico);
+
+
+  }
   
   executarDFS(cy, naoDir,noInicio,rapidezDaAnimacao){
 
@@ -38,14 +79,19 @@ export class HomeProvider {
      
       if(!GrafoTeorico.vetor[key].descoberto){
 
+        console.log("NO INICIO: "+GrafoTeorico.noInicio)
         AlgoritmosClassicos.DFS_Visit(GrafoTeorico);
-        
         AlgoritmsDeInterface.animarDescobertas(cy,GrafoTeorico,rapidezDaAnimacao)
         
         GrafoTeorico.noInicio =key;
 
       }
 
+      if(!GrafoTeorico.vetor[GrafoTeorico.noInicio].descoberto){
+         AlgoritmosClassicos.DFS_Visit(GrafoTeorico);
+        
+         AlgoritmsDeInterface.animarDescobertas(cy,GrafoTeorico,rapidezDaAnimacao)
+      }
     });
 
 

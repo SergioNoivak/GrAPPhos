@@ -54,21 +54,27 @@ export class HomePage {
 
   getAlgoritmo(){
 
-      // switch(this.algoritmoAtual){
+      switch(this.algoritmoAtual){
 
-      //   case 'DFS-Visit':
-          // this.homeProvider.executarDFSVisit(this.grafoInterface,true,this.noInicial,this.rapidezDaAnimacao);
+        case 'DFS-Visit':
+          this.homeProvider.executarDFSVisit(this.grafoInterface,true,this.noInicial,this.rapidezDaAnimacao);
+          
+          break;
+          
+          case 'DFS':
           this.homeProvider.executarDFS(this.grafoInterface,true,this.noInicial,this.rapidezDaAnimacao);
+          break;
+          
+          
+          case 'BFS':
+          
+          this.homeProvider.executarBFS(this.grafoInterface,true,this.noInicial,this.rapidezDaAnimacao);
+        break;
 
 
-      //   break;
 
 
-
-
-
-
-      // }
+       }
 
 
 

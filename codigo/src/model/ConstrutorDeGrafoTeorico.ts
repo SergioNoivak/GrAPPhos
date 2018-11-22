@@ -10,11 +10,14 @@ export class ConstrutorDeGrafoTeorico {
 
       var noTeorico = {
         Adj: {},
-        nome: -1
+        nome: -1,
+        descoberto:false
       }
 
       var nomeNo = noDaTela.data('label');
       noTeorico.nome = parseInt(nomeNo);
+
+
       GrafoTeorico.vetor[parseInt(nomeNo)] = noTeorico;
     });
 
